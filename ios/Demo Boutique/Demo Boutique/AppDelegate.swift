@@ -1,11 +1,24 @@
 import UIKit
 import SDWebImage
+import SplunkOtel
+import SplunkOtelCrashReporting
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //set the realm and token
+
+        SplunkRumBuilder(realm: "<realm>", rumAuth: "<rum-token>")
+        // Call methods to configure environment name, app name, and if you want to see debug logs
+        .deploymentEnvironment(environment: "<environment>")
+        .setApplicationName("<your_app_name>").debug(enabled: true).build()
+
+        //enable crash reporting
+
+        SplunkRumCrashReporting.start()
+        
 
         // Clear SDWebImage caches so the images get loaded on every app open
         SDImageCache.shared.clearMemory()
