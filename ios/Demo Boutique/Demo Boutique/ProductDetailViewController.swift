@@ -1,4 +1,5 @@
 import UIKit
+import SplunkOtel
 
 class ProductDetailViewController: UIViewController {
     @IBOutlet var productImage: UIImageView!
@@ -32,14 +33,14 @@ class ProductDetailViewController: UIViewController {
 
      // Here is an example of manual instrumentation
      func calculateShipping() -> String {
-         /*let tracer = OpenTelemetry.instance.tracerProvider.get(instrumentationName: "manual_example", instrumentationVersion: "1.0")
+         let tracer = OpenTelemetry.instance.tracerProvider.get(instrumentationName: "manual_example", instrumentationVersion: "1.0")
          let span = tracer.spanBuilder(spanName: "calculateShipping").startSpan()
          span.setAttribute(key: "shipping.currency", value: "USD")
          defer {
              // using defer ensures that the span will end even if the method throws
              // if you want to capture exception details in the span, you'll need a try/catch block
              span.end()
-         }*/
+         }
 
          sleep(2) // this is a very difficult and expensive calculation!
          return "5.95"
