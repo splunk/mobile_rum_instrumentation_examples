@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    compileSdk 34
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.splunk.android.workshopapp"
         minSdk 21
-        targetSdk 34
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 
@@ -31,7 +31,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
-    compileSdkVersion 34
+    compileSdkVersion 31
     namespace 'com.splunk.android.workshopapp'
 }
 
