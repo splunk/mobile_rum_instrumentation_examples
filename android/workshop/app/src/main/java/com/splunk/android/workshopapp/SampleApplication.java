@@ -18,10 +18,52 @@ package com.splunk.android.workshopapp;
 
 import android.app.Application;
 
+import com.splunk.rum.SplunkRum;
+import com.splunk.rum.StandardAttributes;
+
+import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.trace.Span;
+
+
 public class SampleApplication extends Application {
+
+    private final String realm = "us1";
+    private final String rumAccessToken = "O8xtu5zI6W6YUNuh7a86fA";
 
     @Override
     public void onCreate() {
         super.onCreate();
+
+        SplunkRum.builder()
+                .setApplicationName("trn_android_app")
+                .setDeploymentEnvironment("trn_env")
+                .setRealm(realm)
+                .setRumAccessToken(rumAccessToken)
+                .enableDebug()
+                .build(this);
+
+        // Add global metadata to every span
+        SplunkRum.getInstance().setGlobalAttribute(AttributeKey.stringKey("user.role"), "premium");
+
+        // Add a custom RUM event
+        SplunkRum.getInstance().addRumEvent("Application Started", Attributes.builder().build());
+
+        // Add a custom workflow
+        Span workinghard = SplunkRum.getInstance().startWorkflow("Main thread working hard");
+
+        try {
+            Thread.sleep(1000);
+        }
+        catch(InterruptedException ex)
+        {
+            Thread.currentThread().interrupt();
+        }
+
+        workinghard.end();
+
+
     }
+
+
 }

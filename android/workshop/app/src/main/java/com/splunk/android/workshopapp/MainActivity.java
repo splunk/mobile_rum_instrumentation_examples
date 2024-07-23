@@ -28,10 +28,12 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.splunk.android.workshopapp.databinding.ActivityMainBinding;
 
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         binding.fab.setOnClickListener(view -> {
             new com.splunk.android.workshopapp.MailDialogFragment(this).show(getSupportFragmentManager(), "Mail");
         });
+
     }
 
     @Override
