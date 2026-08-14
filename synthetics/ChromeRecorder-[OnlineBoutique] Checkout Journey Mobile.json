@@ -1,0 +1,148 @@
+{
+    "title": "XXX [OnlineBoutique] Checkout Journey Mobile",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 385,
+            "height": 1183,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://1518-572927-ondmd57-aio1.students.splunk.education/view/demo",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://1518-572927-ondmd57-aio1.students.splunk.education/view/demo",
+                    "title": "Online Boutique"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(4) a > div"
+                ],
+                [
+                    "xpath//html/body/main/div/div/div[2]/div[4]/div/a/div"
+                ],
+                [
+                    "pierce/div:nth-of-type(4) a > div"
+                ]
+            ],
+            "offsetY": 214.125,
+            "offsetX": 279,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://1518-572927-ondmd57-aio1.students.splunk.education/view/demo/product/L9ECAV7KIM",
+                    "title": "Online Boutique"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/QUANTITY"
+                ],
+                [
+                    "#quantity"
+                ],
+                [
+                    "xpath///*[@id=\"quantity\"]"
+                ],
+                [
+                    "pierce/#quantity"
+                ]
+            ],
+            "offsetY": 20.3125,
+            "offsetX": 38.484375
+        },
+        {
+            "type": "change",
+            "value": "4",
+            "selectors": [
+                [
+                    "aria/QUANTITY"
+                ],
+                [
+                    "#quantity"
+                ],
+                [
+                    "xpath///*[@id=\"quantity\"]"
+                ],
+                [
+                    "pierce/#quantity"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/ADD TO CART"
+                ],
+                [
+                    "div.h-product a"
+                ],
+                [
+                    "xpath//html/body/main/div[1]/div/div[2]/div/form/div/a"
+                ],
+                [
+                    "pierce/div.h-product a"
+                ],
+                [
+                    "text/Add to Cart"
+                ]
+            ],
+            "offsetY": 23.3125,
+            "offsetX": 90.515625,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://1518-572927-ondmd57-aio1.students.splunk.education/view/demo/cart",
+                    "title": "Online Boutique"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/PLACE ORDER"
+                ],
+                [
+                    "div > div > div.py-3 button"
+                ],
+                [
+                    "xpath///*[@id=\"mycart\"]/div[4]/button"
+                ],
+                [
+                    "pierce/div > div > div.py-3 button"
+                ],
+                [
+                    "text/Place order"
+                ]
+            ],
+            "offsetY": 27.015625,
+            "offsetX": 78.84375,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://1518-572927-ondmd57-aio1.students.splunk.education/view/demo/cart/checkout?email=someone%40example.com&street_address=1600+Amphitheatre+Parkway&zip_code=94043&city=Mountain+View&state=CA&country=United+States&credit_card_number=4432-8015-6152-0454&credit_card_expiration_month=1&credit_card_expiration_year=2024&credit_card_cvv=672",
+                    "title": "Online Boutique"
+                }
+            ]
+        }
+    ]
+}
